@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Just a quick app I spun up in order to get acquainted with a few gems:
 
-Things you may want to cover:
+* Bootstrap (boostrap-sass) 
 
-* Ruby version
+* Google Maps API (Gmaps4rails)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Geocoding (geocoder)
