@@ -1,35 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<div class="col-md-4 col-md-offset-1 col-sm-12">
+<div class="col-md-6 col-sm-12">
   <h1>Locations</h1>
-  
+
   <table class="table">
     <thead>
       <tr>
         <th>Address</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
         <th colspan="3"></th>
       </tr>
     </thead>
-  
+
     <tbody>
       <% @locations.each do |location| %>
         <tr>
           <td><%= location.address %></td>
-          <td><%= location.latitude %></td>
-          <td><%= location.longitude %></td>
           <td><%= link_to 'Show', location %></td>
           <td><%= link_to 'Edit', edit_location_path(location) %></td>
-          <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
+        <tr>
+        <%= form_for(@location) do |f| %>
+          <td><%= f.text_field :address %></td>
+          <td><%= f.submit "Submit New Location", :class => "btn btn-success" %></td>
+        </tr>
     </tbody>
   </table>
-  <%= link_to 'New Location', new_location_path, class: "btn btn-large btn-primary" %>
+
+  <% end %>
+  <%#= link_to 'New Location', new_location_path, class: "btn btn-large btn-primary" %>
 </div>
 
-<div class="col-sm-12 col-md-7">
+<div class="col-sm-12 col-md-6">
   <%= render 'locations/map_holder' %>
 </div>
 <br>
